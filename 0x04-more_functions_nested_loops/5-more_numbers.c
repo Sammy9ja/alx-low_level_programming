@@ -1,22 +1,28 @@
-#include "main.h"
+#include"main.h"
 
 /**
- * print_diagonal - a function that draws a diagonal line on the terminal
- * @n: length of diagonal
- * Return: void
+ * more_numbers - print 0 - 14 ten times and you
+ *		can only use _putchar three times
+ *
+ * Return: Always 0 (Success)
  */
-void print_diagonal(int n)
+
+void more_numbers(void)
 {
-int a, b;
-if (n <= 0)
-_putchar('\n');
-for (a = 0; a < n; a++)
-{
-for (b = 0; b < a; b++)
-{
-_putchar(' ');
-}
-putchar('\\');
-_putchar('\n');
-}
+	int num, row, count;
+
+	for (row = 1; row <= 10; ++row)
+	{
+		for (count = 0; count <= 14; ++count)
+		{
+			num = count;
+			if (count > 9)
+			{
+				_putchar(1 + 48);
+				num = count % 10;
+			}
+			_putchar(num + 48);
+		}
+		_putchar('\n');
+	}
 }

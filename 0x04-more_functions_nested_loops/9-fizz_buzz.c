@@ -10,23 +10,24 @@
  */
 int main(void)
 {
-int i;
-char f[] = "Fizz";
-char b[] = "Buzz";
-char fb[] = "FizzBuzz";
-for (i = 1; i <= 100; i++)
-{
-if (i == 100)
-printf("%s", b);
-else if ((i % 3 == 0) && (i % 5 == 0))
-printf("%s ", fb);
-if (i % 3 == 0)
-printf("%s ", f);
-else if (i % 5 == 0)
-printf("%s ", b);
-else
-printf("%d ", i);
-}
-printf("\n");
-return (0);
+	int num;
+
+	for (num = 1; num <= 100; ++num)
+	{
+		if (num % 3 == 0 && !(num % 5 == 0))
+			printf("Fizz");
+		else if (num % 5 == 0 && !(num % 3 == 0))
+			printf("Buzz");
+		else if (num % 3 == 0 && num % 5 == 0)
+			printf("FizzBuzz");
+		else
+			printf("%d", num);
+
+		if (num != 100)
+			printf(" ");
+		else
+			printf("\n");
+	}
+
+	return (0);
 }
